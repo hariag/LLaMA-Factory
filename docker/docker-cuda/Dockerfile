@@ -10,13 +10,13 @@ ENV VLLM_WORKER_MULTIPROC_METHOD=spawn
 
 # Define installation arguments
 ARG INSTALL_BNB=false
-ARG INSTALL_VLLM=false
+ARG INSTALL_VLLM=true
 ARG INSTALL_DEEPSPEED=false
-ARG INSTALL_FLASHATTN=false
+ARG INSTALL_FLASHATTN=true
 ARG INSTALL_LIGER_KERNEL=false
 ARG INSTALL_HQQ=false
 ARG INSTALL_EETQ=false
-ARG PIP_INDEX=https://pypi.org/simple
+ARG PIP_INDEX=https://pypi.tuna.tsinghua.edu.cn/simple
 ARG HTTP_PROXY=
 
 # Set the working directory
@@ -34,6 +34,7 @@ COPY requirements.txt /app
 RUN pip config set global.index-url "$PIP_INDEX" && \
     pip config set global.extra-index-url "$PIP_INDEX" && \
     python -m pip install --upgrade pip && \
+    python -m pip install modelscope && \
     if [ -n "$HTTP_PROXY" ]; then \
         python -m pip install --proxy=$HTTP_PROXY -r requirements.txt; \
     else \
