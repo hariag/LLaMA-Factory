@@ -90,6 +90,8 @@ RUN if [ -n "$HTTP_PROXY" ]; then \
         unset https_proxy; \
     fi
 
+RUN python -m pip install opencv-fixer==0.2.5 && python -c "from opencv_fixer import AutoFix; AutoFix()" 
+
 # Set up volumes
 VOLUME [ "/root/.cache/huggingface", "/root/.cache/modelscope", "/app/data", "/app/output" ]
 
