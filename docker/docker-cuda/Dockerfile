@@ -100,3 +100,5 @@ EXPOSE 7860
 # Expose port 8000 for the API service
 ENV API_PORT 8000
 EXPOSE 8000
+
+ENTRYPOINT [ "bash", "run.sh" ]
