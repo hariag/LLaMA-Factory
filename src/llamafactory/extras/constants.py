@@ -1418,6 +1418,29 @@ register_model_group(
 
 register_model_group(
     models={
+        "MiMo-7B-Base": {
+            DownloadSource.DEFAULT: "XiaomiMiMo/MiMo-7B-Base",
+            DownloadSource.MODELSCOPE: "XiaomiMiMo/MiMo-7B-Base",
+        },
+        "MiMo-7B-Instruct": {
+            DownloadSource.DEFAULT: "XiaomiMiMo/MiMo-7B-SFT",
+            DownloadSource.MODELSCOPE: "XiaomiMiMo/MiMo-7B-SFT",
+        },
+        "MiMo-7B-Instruct-RL": {
+            DownloadSource.DEFAULT: "XiaomiMiMo/MiMo-7B-RL",
+            DownloadSource.MODELSCOPE: "XiaomiMiMo/MiMo-7B-RL",
+        },
+        "MiMo-7B-RL-ZERO": {
+            DownloadSource.DEFAULT: "XiaomiMiMo/MiMo-7B-RL-ZERO",
+            DownloadSource.MODELSCOPE: "XiaomiMiMo/MiMo-7B-RL-ZERO",
+        },
+    },
+    template="mimo",
+)
+
+
+register_model_group(
+    models={
         "MiniCPM-2B-SFT-Chat": {
             DownloadSource.DEFAULT: "openbmb/MiniCPM-2B-sft-bf16",
             DownloadSource.MODELSCOPE: "OpenBMB/miniCPM-bf16",
@@ -2479,6 +2502,14 @@ register_model_group(
             DownloadSource.DEFAULT: "Qwen/Qwen3-235B-A22B",
             DownloadSource.MODELSCOPE: "Qwen/Qwen3-235B-A22B",
         },
+        "Qwen3-14B-Instruct-AWQ": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3-14B-AWQ",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3-14B-AWQ",
+        },
+        "Qwen3-32B-Instruct-AWQ": {
+            DownloadSource.DEFAULT: "Qwen/Qwen3-32B-AWQ",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen3-32B-AWQ",
+        },
     },
     template="qwen3",
 )
@@ -2502,10 +2533,14 @@ register_model_group(
 
 register_model_group(
     models={
+        "Qwen2.5-Omni-3B": {
+            DownloadSource.DEFAULT: "Qwen/Qwen2.5-Omni-3B",
+            DownloadSource.MODELSCOPE: "Qwen/Qwen2.5-Omni-3B",
+        },
         "Qwen2.5-Omni-7B": {
             DownloadSource.DEFAULT: "Qwen/Qwen2.5-Omni-7B",
             DownloadSource.MODELSCOPE: "Qwen/Qwen2.5-Omni-7B",
-        }
+        },
     },
     template="qwen2_omni",
     multimodal=True,

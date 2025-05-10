@@ -21,6 +21,7 @@
 <h3 align="center">
     使用零代码<a href="#快速开始">命令行</a>与 <a href="#llama-board-可视化微调由-gradio-驱动">Web UI</a> 轻松微调百余种大模型
 </h3>
+
 <p align="center">
     <picture>
         <img alt="Github trend" src="https://trendshift.io/api/badge/repositories/4535">
@@ -269,6 +270,7 @@ https://github.com/user-attachments/assets/43b700c6-a178-41db-b1f8-8190a5d3fcfc
 | [LLaVA-1.5](https://huggingface.co/llava-hf)                      | 7B/13B                           | llava               |
 | [LLaVA-NeXT](https://huggingface.co/llava-hf)                     | 7B/8B/13B/34B/72B/110B           | llava_next          |
 | [LLaVA-NeXT-Video](https://huggingface.co/llava-hf)               | 7B/34B                           | llava_next_video    |
+| [MiMo](https://huggingface.co/XiaomiMiMo)                         | 7B                               | mimo                |
 | [MiniCPM](https://huggingface.co/openbmb)                         | 1B/2B/4B                         | cpm/cpm3            |
 | [MiniCPM-o-2.6/MiniCPM-V-2.6](https://huggingface.co/openbmb)     | 8B                               | minicpm_o/minicpm_v |
 | [Ministral/Mistral-Nemo](https://huggingface.co/mistralai)        | 8B/12B                           | ministral           |
@@ -284,7 +286,7 @@ https://github.com/user-attachments/assets/43b700c6-a178-41db-b1f8-8190a5d3fcfc
 | [Qwen (1-2.5) (Code/Math/MoE/QwQ)](https://huggingface.co/Qwen)   | 0.5B/1.5B/3B/7B/14B/32B/72B/110B | qwen                |
 | [Qwen3 (MoE)](https://huggingface.co/Qwen)                        | 0.6B/1.7B/4B/8B/14B/32B/235B     | qwen3               |
 | [Qwen2-Audio](https://huggingface.co/Qwen)                        | 7B                               | qwen2_audio         |
-| [Qwen2.5-Omni](https://huggingface.co/Qwen)\*\*                   | 7B                               | qwen2_omni          |
+| [Qwen2.5-Omni](https://huggingface.co/Qwen)\*\*                   | 3B/7B                            | qwen2_omni          |
 | [Qwen2-VL/Qwen2.5-VL/QVQ](https://huggingface.co/Qwen)            | 2B/3B/7B/32B/72B                 | qwen2_vl            |
 | [Skywork o1](https://huggingface.co/Skywork)                      | 8B                               | skywork_o1          |
 | [StarCoder 2](https://huggingface.co/bigcode)                     | 3B/7B/15B                        | -                   |
@@ -582,7 +584,7 @@ pip install .
 > [!NOTE]
 > 使用自定义数据集时，请更新 `data/dataset_info.json` 文件。
 
-您也可以使用 **[Easy Dataset](https://github.com/ConardLi/easy-dataset)** 构建用于微调的合成数据。
+您也可以使用 **[Easy Dataset](https://github.com/ConardLi/easy-dataset)** 或 **[GraphGen](https://github.com/open-sciencelab/GraphGen)** 构建用于微调的合成数据。
 
 ### 快速开始
 

@@ -18,26 +18,26 @@
 [![Studios](https://img.shields.io/badge/ModelScope-Open%20in%20Studios-blue)](https://modelscope.cn/studios/hiyouga/LLaMA-Board)
 [![SageMaker](https://img.shields.io/badge/SageMaker-Open%20in%20AWS-blue)](https://aws.amazon.com/cn/blogs/china/a-one-stop-code-free-model-fine-tuning-deployment-platform-based-on-sagemaker-and-llama-factory/)
 
-<hr>
-
-
-
 <div align="center" markdown="1">
 
 ### Supporters ❤️
-   <br>
-   <a href="https://warp.dev/llama-factory">
-      <img alt="Warp sponsorship" width="400" src="https://github.com/user-attachments/assets/ab8dd143-b0fd-4904-bdc5-dd7ecac94eae">
-   </a>
 
-### [Warp, the agentic terminal for developers](https://warp.dev/llama-factory)
-[Available for MacOS, Linux, & Windows](https://warp.dev/llama-factory)<br>
+<a href="https://warp.dev/llama-factory">
+    <img alt="Warp sponsorship" width="400" src="https://github.com/user-attachments/assets/ab8dd143-b0fd-4904-bdc5-dd7ecac94eae">
+</a>
+
+#### [Warp, the agentic terminal for developers](https://warp.dev/llama-factory)
+
+[Available for MacOS, Linux, & Windows](https://warp.dev/llama-factory)
 
 </div>
-<hr>
+
+----
+
 <h3 align="center">
     Easily fine-tune 100+ large language models with zero-code <a href="#quickstart">CLI</a> and <a href="#fine-tuning-with-llama-board-gui-powered-by-gradio">Web UI</a>
 </h3>
+
 <p align="center">
     <picture>
         <img alt="Github trend" src="https://trendshift.io/api/badge/repositories/4535">
@@ -283,6 +283,7 @@ Compared to ChatGLM's [P-Tuning](https://github.com/THUDM/ChatGLM2-6B/tree/main/
 | [LLaVA-1.5](https://huggingface.co/llava-hf)                      | 7B/13B                           | llava               |
 | [LLaVA-NeXT](https://huggingface.co/llava-hf)                     | 7B/8B/13B/34B/72B/110B           | llava_next          |
 | [LLaVA-NeXT-Video](https://huggingface.co/llava-hf)               | 7B/34B                           | llava_next_video    |
+| [MiMo](https://huggingface.co/XiaomiMiMo)                         | 7B                               | mimo                |
 | [MiniCPM](https://huggingface.co/openbmb)                         | 1B/2B/4B                         | cpm/cpm3            |
 | [MiniCPM-o-2.6/MiniCPM-V-2.6](https://huggingface.co/openbmb)     | 8B                               | minicpm_o/minicpm_v |
 | [Ministral/Mistral-Nemo](https://huggingface.co/mistralai)        | 8B/12B                           | ministral           |
@@ -298,7 +299,7 @@ Compared to ChatGLM's [P-Tuning](https://github.com/THUDM/ChatGLM2-6B/tree/main/
 | [Qwen (1-2.5) (Code/Math/MoE/QwQ)](https://huggingface.co/Qwen)   | 0.5B/1.5B/3B/7B/14B/32B/72B/110B | qwen                |
 | [Qwen3 (MoE)](https://huggingface.co/Qwen)                        | 0.6B/1.7B/4B/8B/14B/32B/235B     | qwen3               |
 | [Qwen2-Audio](https://huggingface.co/Qwen)                        | 7B                               | qwen2_audio         |
-| [Qwen2.5-Omni](https://huggingface.co/Qwen)\*\*                   | 7B                               | qwen2_omni          |
+| [Qwen2.5-Omni](https://huggingface.co/Qwen)\*\*                   | 3B/7B                            | qwen2_omni          |
 | [Qwen2-VL/Qwen2.5-VL/QVQ](https://huggingface.co/Qwen)            | 2B/3B/7B/32B/72B                 | qwen2_vl            |
 | [Skywork o1](https://huggingface.co/Skywork)                      | 8B                               | skywork_o1          |
 | [StarCoder 2](https://huggingface.co/bigcode)                     | 3B/7B/15B                        | -                   |
@@ -595,7 +596,7 @@ Please refer to [data/README.md](data/README.md) for checking the details about 
 > [!NOTE]
 > Please update `data/dataset_info.json` to use your custom dataset.
 
-You can also use **[Easy Dataset](https://github.com/ConardLi/easy-dataset)** to create synthetic data for fine-tuning.
+You can also use **[Easy Dataset](https://github.com/ConardLi/easy-dataset)** or **[GraphGen](https://github.com/open-sciencelab/GraphGen)** to create synthetic data for fine-tuning.
 
 ### Quickstart
 

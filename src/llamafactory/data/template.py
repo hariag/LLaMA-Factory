@@ -60,7 +60,7 @@ class Template:
         messages: list[dict[str, str]],
         system: Optional[str] = None,
         tools: Optional[str] = None,
-        enable_thinking: bool = True,
+        enable_thinking: bool = False,
     ) -> tuple[list[int], list[int]]:
         r"""Return a single pair of token ids representing prompt and response respectively."""
         encoded_messages = self._encode(tokenizer, messages, system, tools)
@@ -406,7 +406,7 @@ class ReasoningTemplate(Template):
         messages: list[dict[str, str]],
         system: Optional[str] = None,
         tools: Optional[str] = None,
-        enable_thinking: bool = True,
+        enable_thinking: bool = False,
     ) -> tuple[list[int], list[int]]:
         messages = deepcopy(messages)
         for i in range(len(messages)):
@@ -418,7 +418,7 @@ class ReasoningTemplate(Template):
         for encoded_ids in encoded_messages[:-1]:
             prompt_ids += encoded_ids
 
-        if not enable_thinking or (
+        if not enable_thinking and (
             messages[-1]["role"] == Role.ASSISTANT
             and self.thought_words[0] not in messages[-1]["content"]
             and self.thought_words[1] not in messages[-1]["content"]
@@ -1321,6 +1321,24 @@ register_template(
         "<Thought>应该尽可能是英文，但是有2个特例，一个是对原文中的引用，另一个是是数学应该使用markdown格式，<Output>内的输出需要遵循用户输入的语言。\n"
     ),
     stop_words=["<|im_end|>"],
+)
+
+
+# copied from qwen template
+register_template(
+    name="mimo",
+    format_user=StringFormatter(slots=["<|im_start|>user\n{{content}}<|im_end|>\n<|im_start|>assistant\n"]),
+    format_assistant=StringFormatter(slots=["{{content}}<|im_end|>\n"]),
+    format_system=StringFormatter(slots=["<|im_start|>system\n{{content}}<|im_end|>\n"]),
+    format_function=FunctionFormatter(slots=["{{content}}<|im_end|>\n"], tool_format="qwen"),
+    format_observation=StringFormatter(
+        slots=["<|im_start|>user\n<tool_response>\n{{content}}\n</tool_response><|im_end|>\n<|im_start|>assistant\n"]
+    ),
+    format_tools=ToolFormatter(tool_format="qwen"),
+    default_system="You are a helpful assistant.",
+    stop_words=["<|im_end|>"],
+    replace_eos=True,
+    template_class=ReasoningTemplate,
 )
 
 
